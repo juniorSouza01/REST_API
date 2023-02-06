@@ -11,7 +11,7 @@ router.use(express.urlencoded({ extended: false }));
 /** De olho no JSON data */
 router.use(express.json());
 
-/** Regras da API */
+/** Rules API */
 router.use((req, res, next) => {
  
     res.header('Access-Control-Allow-Origin', '*');
@@ -28,7 +28,7 @@ router.use((req, res, next) => {
 /** Routes */
 router.use('/', routes);
 
-/** Error handling */
+/** Error */
 router.use((req, res, next) => {
     const error = new Error('not found');
     return res.status(404).json({
